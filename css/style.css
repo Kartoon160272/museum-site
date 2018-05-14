@@ -256,9 +256,10 @@ span span {
     left: 10px;
 }
 
-/* HERO EXHIBITIONS SUB */
+/* HERO BIOLOGY */
 
-.hero-exhibitions_sub {
+
+.hero-biology {
     display: grid;
     grid-area: hero;
     background: red url(../images/biology.jpg);
@@ -269,12 +270,7 @@ span span {
     align-content: end;
 }
 
-.hero-exhibitions_sub img {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.hero-exhibitions_sub h1 {
+.hero-biology h1 {
     grid-column: 1/-1;
     font-size: 3rem;
     color: var(--light);
@@ -282,7 +278,73 @@ span span {
     text-align: center;
 }
 
-.hero-exhibitions_sub .img_txt_green{
+.hero-biology .img_txt_green {
+    font-size: 1.3rem;
+    color: white;
+    background-color: var(--green);
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+    justify-self: start;
+    padding: 8px;
+    margin: 0 0 400px 0;
+}
+
+/* HERO ROBOTICS */
+
+.hero-robotics {
+    display: grid;
+    grid-area: hero;
+    background: red url(../images/robotics-hero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 500px;
+    align-content: end;
+}
+
+.hero-robotics h1 {
+    grid-column: 1/-1;
+    font-size: 3rem;
+    color: var(--light);
+    background: var(--green-trans);
+    text-align: center;
+}
+
+.hero-robotics .img_txt_green {
+    font-size: 1.3rem;
+    color: white;
+    background-color: var(--green);
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+    justify-self: start;
+    padding: 8px;
+    margin: 0 0 400px 0;
+}
+
+/* HERO EVOLUTION */
+
+.hero-evolution {
+    display: grid;
+    grid-area: hero;
+    background: red url(../images/evolution-hero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 500px;
+    align-content: end;
+}
+
+.hero-evolution h1 {
+    grid-column: 1/-1;
+    font-size: 3rem;
+    color: var(--light);
+    background: var(--green-trans);
+    text-align: center;
+}
+
+.hero-evolution .img_txt_green {
     font-size: 1.3rem;
     color: white;
     background-color: var(--green);
@@ -294,6 +356,69 @@ span span {
     margin: 0 0 70px 0;
 }
 
+/* HERO COSMOLOGY */
+
+
+.hero-cosmology {
+    display: grid;
+    grid-area: hero;
+    background: red url(../images/cosmology-hero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 500px;
+    align-content: end;
+}
+
+.hero-cosmology h1 {
+    grid-column: 1/-1;
+    font-size: 3rem;
+    color: var(--light);
+    background: var(--green-trans);
+    text-align: center;
+}
+
+.hero-cosmology .img_txt_green {
+    font-size: 1.3rem;
+    color: white;
+    background-color: var(--green);
+    align-self: start;
+    justify-self: start;
+    padding: 8px;
+    margin: 0 0 400px 0;
+}
+
+/* HERO ECOLOGY */
+
+
+.hero-ecology {
+    display: grid;
+    grid-area: hero;
+    background: red url(../images/ecology-hero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 500px;
+    align-content: end;
+}
+
+.hero-ecology h1 {
+    grid-column: 1/-1;
+    font-size: 3rem;
+    color: var(--light);
+    background: var(--green-trans);
+    text-align: center;
+}
+
+.hero-ecology .img_txt_green {
+    font-size: 1.3rem;
+    color: white;
+    background-color: var(--green);
+    align-self: start;
+    justify-self: start;
+    padding: 8px;
+    margin: 0 0 400px 0;
+}
 
 /* TOP BOX */
 
@@ -533,17 +658,36 @@ span span {
     color: var(--dark);
 }
 
+.info-head-top {
+    background: var(--primary);
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    padding: 3rem;
+}
+
+.info-head-top h1 {
+    grid-column: 1/-1;
+    padding: 0;
+    margin: 0;
+    font-size: 2.5rem;
+    color: var(--dark);
+}
+
+/*
 .info img {
     justify-self: center;
 }
+*/
 
 /*MORE TO EXPLORE SECTION*/
 
 .more-to-explore {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, max-content) );
+    grid-template-columns: repeat(auto-fill, minmax(200px, max-content));
     box-shadow: var(--shadow);
-    padding: 0 ;
+    padding: 0;
     justify-items: start;
 }
 
@@ -552,7 +696,7 @@ span span {
 }
 
 .more-to-explore ul {
-  list-style: none;
+    list-style: none;
     justify-self: start;
 }
 
@@ -609,7 +753,11 @@ footer ul {
 /* Media Queries */
 
 @media screen and (max-width: 800px) {
-.info {
+    .info {
+        grid-template-columns: 1fr;
+    }
+
+    .info-head-top {
         grid-template-columns: 1fr;
     }
 }
@@ -626,12 +774,11 @@ footer ul {
         font-size: 1.5rem;
     }
 
-/*
+    /*
     .info {
         grid-template-columns: 1fr;
     }
 */
-
     .info .btn {
         display: block;
         text-align: center;
@@ -644,8 +791,8 @@ footer ul {
     .top-box-exhibitions {
         display: none;
     }
-    
-   
+
+
 }
 
 @media screen and (max-width: 650px) {
@@ -674,10 +821,10 @@ footer ul {
     .hero-exhibitions p {
         font-size: 1.5rem;
     }
-    
+
     .hero-exhibitions_sub h1 {
-    font-size: 2rem;
-}
+        font-size: 2rem;
+    }
 
 
 
@@ -686,16 +833,18 @@ footer ul {
         justify-items: center;
     }
 
-.info h1 {
-    font-size: 1.9em;
-}
+    .info h1 {
+        font-size: 1.9em;
+    }
     
-/*
+    .info-head-top h1 {
+        font-size: 1.9em;
+    }
+
+    /*
     .more-to-explore {
     grid-template-columns: 1fr;
         justify-content: center;
 }
 */
-     
-
 }
