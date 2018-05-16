@@ -10,15 +10,16 @@
     --purple: #9E005D;
     --shadow: 0 1px 5px rgba(100, 100, 100, 0.8);
     --green-trans: rgba(111, 159, 65, 0.7);
+    --blue-trans: rgba(66, 123, 176, 0.8);
     --transparent: rgba(70, 70, 70, 0.4);
 }
-
 
 body {
     font-family: 'Roboto', arial, helvetica, sans-serif;
     font-size: 1em;
     margin: 0 20px 10px 20px;
     line-height: 1.3;
+
 }
 
 /*LINK*/
@@ -36,6 +37,21 @@ a:hover {
 footer a:hover {
     color: var(--primary);
 }
+.button a:hover {
+    background: var(--primary);
+}
+
+.button {
+    background: var(--blue);
+    display: block;
+    justify-self: end;
+    text-align: center;
+    padding: 1em;
+    font-size: 1.3em;
+}
+
+
+
 
 img {
     max-width: 100%;
@@ -92,7 +108,7 @@ nav li {
 }
 
 .label-toggle {
-    display: non
+    display: none;
 }
 
 .nav-container {
@@ -100,6 +116,10 @@ nav li {
     display: flex;
     justify-content: space-between;
 }
+
+ .sub-menu {
+        display: none;
+    }
 
 /*MEDIA QUERY HAMBURGER*/
 
@@ -110,28 +130,27 @@ nav li {
     }
 
     nav ul {
-        background-color: var(--primary);
+        background-color: var(--light);
         display: block;
-
         height: 0;
         list-style-type: none;
         opacity: 0;
-        text-align: center;
+        text-align: left;
         transition: all 1s ease;
         width: 100%;
         visibility: hidden;
         margin: 0;
-        padding: 0;
+        padding: 0 2em;
     }
-
+   
 
     nav li {
         /*border-bottom: 2px solid var(--blue);*/
         width: 100%;
         /*        color: var(--blue);*/
         display: block;
-        font-size: 1.5em;
-        padding: 1em;
+        font-size: 1.2em;
+        padding: 0.5em;
     }
 
     #menu-toggle:checked ~ ul {
@@ -155,6 +174,12 @@ nav li {
     .nav-container {
         display: block;
     }
+    
+     .sub-menu {
+         font-size: 1em;
+        display: block;
+         padding-left: 2em;
+    }
 }
 
 /* TOP CONTAINER */
@@ -165,6 +190,7 @@ nav li {
     grid-gap: 20px;
     grid-template-areas: 'hero hero top-box-a' 'hero hero top-box-b';
     z-index: 300;
+    max-width: 100vw;
 }
 
 /* HERO */
@@ -175,8 +201,9 @@ nav li {
     background: red url(../images/hero_desktop_900px.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
-    min-height: 400px;
+    background-position: left;
+/*    min-height: 400px;*/
+    max-height: 100vh;
     justify-content: end;
     align-content: end
 }
@@ -200,7 +227,7 @@ nav li {
     text-shadow: 0 1px 5px rgba(100, 100, 100, 0.8);
 }
 
-.hero .btn {
+.hero .link_right {
     font-size: 1.8rem;
     background: var(--blue);
     color: var(--light);
@@ -221,14 +248,13 @@ nav li {
     background-repeat: no-repeat;
     background-position: center;
     min-height: 500px;
-    justify-content: strech;
     align-content: start;
 }
 
 .hero-exhibitions h1 {
     grid-column: 1/-1;
     grid-row: 1;
-    font-size: 4.8rem;
+    font-size: 4.8em;
     color: var(--light);
     background: var(--green-trans);
     text-align: center
@@ -237,7 +263,7 @@ nav li {
 
 .hero-exhibitions p {
     grid-row: 2;
-    font-size: 2rem;
+    font-size: 2em;
     color: var(--light);
     text-align: left;
     padding: 0 20px;
@@ -256,13 +282,46 @@ span span {
     left: 10px;
 }
 
-/* HERO BIOLOGY */
+/* HERO ABOUT */
 
+.hero-about {
+    display: grid;
+    grid-area: hero;
+    background: grey url(../images/about-hero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+    min-height: 500px;
+    /*    align-content: end;*/
+}
+
+.hero-about h1 {
+    grid-column: 1/-1;
+    font-size: 3em;
+    color: var(--light);
+    background: var(--blue-trans);
+    text-align: center;
+}
+
+.hero-about .img_txt_green {
+    font-size: 1.3em;
+    color: white;
+    background-color: var(--blue);
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+    justify-self: start;
+    padding: 8px;
+    margin: 0 0 400px 0;
+}
+
+
+/* HERO BIOLOGY */
 
 .hero-biology {
     display: grid;
     grid-area: hero;
-    background: red url(../images/biology.jpg);
+    background: grey url(../images/biology.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -272,14 +331,14 @@ span span {
 
 .hero-biology h1 {
     grid-column: 1/-1;
-    font-size: 3rem;
+    font-size: 3em;
     color: var(--light);
     background: var(--green-trans);
     text-align: center;
 }
 
 .hero-biology .img_txt_green {
-    font-size: 1.3rem;
+    font-size: 1.3em;
     color: white;
     background-color: var(--green);
     grid-column: 1;
@@ -295,7 +354,7 @@ span span {
 .hero-robotics {
     display: grid;
     grid-area: hero;
-    background: red url(../images/robotics-hero.jpg);
+    background: grey url(../images/robotics-hero.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -305,14 +364,14 @@ span span {
 
 .hero-robotics h1 {
     grid-column: 1/-1;
-    font-size: 3rem;
+    font-size: 3em;
     color: var(--light);
     background: var(--green-trans);
     text-align: center;
 }
 
 .hero-robotics .img_txt_green {
-    font-size: 1.3rem;
+    font-size: 1.3em;
     color: white;
     background-color: var(--green);
     grid-column: 1;
@@ -328,7 +387,7 @@ span span {
 .hero-evolution {
     display: grid;
     grid-area: hero;
-    background: red url(../images/evolution-hero.jpg);
+    background: grey url(../images/evolution-hero.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -338,14 +397,14 @@ span span {
 
 .hero-evolution h1 {
     grid-column: 1/-1;
-    font-size: 3rem;
+    font-size: 3em;
     color: var(--light);
     background: var(--green-trans);
     text-align: center;
 }
 
 .hero-evolution .img_txt_green {
-    font-size: 1.3rem;
+    font-size: 1.3em;
     color: white;
     background-color: var(--green);
     grid-column: 1;
@@ -358,11 +417,10 @@ span span {
 
 /* HERO COSMOLOGY */
 
-
 .hero-cosmology {
     display: grid;
     grid-area: hero;
-    background: red url(../images/cosmology-hero.jpg);
+    background: grey url(../images/cosmology-hero.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -372,14 +430,14 @@ span span {
 
 .hero-cosmology h1 {
     grid-column: 1/-1;
-    font-size: 3rem;
+    font-size: 3em;
     color: var(--light);
     background: var(--green-trans);
     text-align: center;
 }
 
 .hero-cosmology .img_txt_green {
-    font-size: 1.3rem;
+    font-size: 1.3em;
     color: white;
     background-color: var(--green);
     align-self: start;
@@ -390,11 +448,10 @@ span span {
 
 /* HERO ECOLOGY */
 
-
 .hero-ecology {
     display: grid;
     grid-area: hero;
-    background: red url(../images/ecology-hero.jpg);
+    background: grey url(../images/ecology-hero.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -404,14 +461,14 @@ span span {
 
 .hero-ecology h1 {
     grid-column: 1/-1;
-    font-size: 3rem;
+    font-size: 3em;
     color: var(--light);
     background: var(--green-trans);
     text-align: center;
 }
 
 .hero-ecology .img_txt_green {
-    font-size: 1.3rem;
+    font-size: 1.3em;
     color: white;
     background-color: var(--green);
     align-self: start;
@@ -428,7 +485,7 @@ span span {
     display: grid;
     align-items: start;
     box-shadow: var(--shadow);
-    padding: 1rem 2rem;
+    padding: 1em 2em;
 }
 
 .top-box-exhibitions {
@@ -467,7 +524,7 @@ span span {
 }
 
 .top-box h3 {
-    font-size: 1rem;
+    font-size: 1em;
     font-weight: 700;
     margin: 1rem 0 0 0;
 }
@@ -499,7 +556,7 @@ span span {
 }
 
 .top-box-exhibitions h3 {
-    font-size: 1rem;
+    font-size: 1em;
     font-weight: 700;
     margin: 1rem 0 0 0;
 }
@@ -530,8 +587,8 @@ span span {
 .crumbs li {
     justify-content: space-between;
     display: flex;
-    padding-left: 20px;
-    font-size: 0.8em
+    padding-left: 0.7em;
+    font-size: 0.9em
 }
 
 
@@ -541,14 +598,14 @@ span span {
 .boxes {
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
 
 .boxes a {
     justify-self: end;
     align-self: end;
-    font-size: 1.5rem;
+    font-size: 1em;
     font-weight: 500;
 }
 
@@ -557,8 +614,8 @@ span span {
     grid-row: 1;
     font-size: 36px;
     color: var(--red);
-    margin: 5px 0;
-    padding: 0 1.5rem;
+    /*    margin: 5px 0;*/
+    /*    padding: 0 1.5rem;*/
 }
 
 .heading-boxes-explore h1 {
@@ -567,7 +624,7 @@ span span {
     font-size: 36px;
     color: var(--purple);
     margin: 5px 0;
-    padding: 0 1.5rem;
+    /*    padding: 0 1.5rem;*/
 }
 
 .heading-boxes h2 {
@@ -576,7 +633,7 @@ span span {
     color: white;
     background-color: var(--green);
     padding: 5px;
-    margin: 0 1.5rem;
+    /*    margin: 0 1.5rem;*/
     display: inline;
 }
 
@@ -586,7 +643,7 @@ span span {
     color: white;
     background-color: var(--green);
     padding: 5px;
-    margin: 0 1.5rem;
+    /*    margin: 0 1.5rem;*/
     display: inline;
 }
 
@@ -594,7 +651,7 @@ span span {
     display: grid;
     background: var(--primary);
     text-align: center;
-    padding: 1.5rem 2rem;
+    padding: 1.5em 2em;
     box-shadow: var(--shadow);
     align-content: start;
 }
@@ -611,7 +668,7 @@ span span {
 }
 
 .box .img_txt_explore {
-    font-size: 1.3rem;
+    font-size: 1.3em;
     color: white;
     background-color: var(--purple);
     grid-column: 1;
@@ -622,7 +679,7 @@ span span {
 }
 
 .box .img_txt_green {
-    font-size: 1.6rem;
+    font-size: 1.6em;
     color: white;
     background-color: var(--green);
     grid-column: 1;
@@ -648,7 +705,7 @@ span span {
     display: grid;
     grid-gap: 30px;
     grid-template-columns: 1fr 1fr;
-    padding: 3rem;
+    padding: 3em;
 }
 
 .info h1 {
@@ -664,15 +721,19 @@ span span {
     display: grid;
     grid-gap: 30px;
     grid-template-columns: 1fr 1fr;
-    padding: 3rem;
+    padding: 3em;
 }
 
 .info-head-top h1 {
     grid-column: 1/-1;
     padding: 0;
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2.5em;
     color: var(--dark);
+}
+
+.info a {
+    justify-self: end;
 }
 
 /*
@@ -683,25 +744,36 @@ span span {
 
 /*MORE TO EXPLORE SECTION*/
 
+.more-to-explore-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+
+}
+
 .more-to-explore {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, max-content));
     box-shadow: var(--shadow);
-    padding: 0;
+    padding: 0 1em 0 0;
     justify-items: start;
+    align-content: start;
 }
 
 .more-to-explore img {
-    padding-left: 3rem;
+    padding: 0 0 0 1em;
+
 }
 
-.more-to-explore ul {
+.more-to-explore ul li {
     list-style: none;
     justify-self: start;
+    padding: 0;
+    margin: 0;
 }
 
 .more-to-explore .img_txt_green {
-    font-size: 1.3rem;
+    font-size: 1.3em;
     color: white;
     background-color: var(--green);
     grid-column: 1/-1;
@@ -709,19 +781,26 @@ span span {
     align-self: start;
     justify-self: start;
     padding: 8px;
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 1.5em 0;
+}
+
+.li_date {
+    color: var(--red);
+    font-weight: 700;
 }
 
 /*FOOTER*/
 
 footer {
     display: grid;
-    grid-template-columns: repeat(4, minmax(250px, min-content));
+   grid-template-columns: repeat(4, minmax(250px, min-content));
+/*    grid-template-columns: 1fr 1fr 1fr 1fr;*/
     background: var(--dark);
     justify-content: center;
     align-items: start;
-    padding: 30px 20px 15px 20px;
+       padding: 30px 20px 15px 20px;
     color: var(--light);
+
 
 }
 
@@ -739,20 +818,25 @@ footer .nav_txt {
 footer ul {
     color: white;
     list-style: none;
-    padding-bottom: 20px;
-    /*    display: inline;*/
+    padding: 0;
+}
+
+footer li {
+    padding: 0;
+    margin: 0;
 }
 
 .copyright {
     color: white;
     grid-column: 1/-1;
     justify-self: center;
-    padding: 30px
+    padding-top: 3em
 }
 
 /* Media Queries */
 
 @media screen and (max-width: 800px) {
+    
     .info {
         grid-template-columns: 1fr;
     }
@@ -760,31 +844,30 @@ footer ul {
     .info-head-top {
         grid-template-columns: 1fr;
     }
+
+
 }
 
 @media screen and (max-width: 1000px) {
 
-
+    .more-to-explore .img_txt_green {
+        font-size: 1rem;
+    }
     .hero-container {
         grid-template-columns: 1fr;
         grid-template-areas: 'hero hero' 'top-box-a top-box-b';
     }
 
-    .hero .btn {
-        font-size: 1.5rem;
+    .hero .link_right {
+        font-size: 1.5em;
     }
 
-    /*
-    .info {
-        grid-template-columns: 1fr;
-    }
-*/
-    .info .btn {
+    .info .link_right {
         display: block;
-        text-align: center;
+        text-align: right;
         margin: auto;
     }
-    footer {
+ footer {
         grid-template-columns: repeat(2, minmax(300px, min-content));
     }
 
@@ -797,54 +880,54 @@ footer ul {
 
 @media screen and (max-width: 650px) {
 
+   footer {
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+    
+    .hero-about h1 {
+        font-size: 2.3em;
+    }
+
+    .more-to-explore-container {
+        grid-template-columns: 1fr;
+    }
+
+
+
     .hero-container {
         grid-template-areas: 'hero' 'top-box-a' 'top-box-b';
     }
 
     .hero a {
-        font-size: 1.4rem;
+        font-size: 1.4em;
         align-content: end;
     }
 
-    .hero {
-        background: red url(../images/hero.jpg);
-        background-position: bottom;
-        min-height: 900px;
-        justify-content: end;
-        align-content: start;
-    }
-
-    .hero-exhibitions h1 {
-        font-size: 2.8rem;
-    }
-
-    .hero-exhibitions p {
-        font-size: 1.5rem;
-    }
-
-    .hero-exhibitions_sub h1 {
-        font-size: 2rem;
-    }
-
-
-
-    footer {
-        grid-template-columns: 1fr;
-        justify-items: center;
-    }
-
-    .info h1 {
-        font-size: 1.9em;
-    }
-    
-    .info-head-top h1 {
-        font-size: 1.9em;
-    }
-
-    /*
-    .more-to-explore {
-    grid-template-columns: 1fr;
-        justify-content: center;
+    /*  .hero {
+        background-position: center;*/
 }
-*/
+
+.hero-exhibitions h1 {
+    font-size: 2.8em;
+}
+
+.hero-exhibitions p {
+    font-size: 1.5em;
+}
+
+.hero-exhibitions_sub h1 {
+    font-size: 2em;
+}
+
+
+.info h1 {
+    font-size: 1.9em;
+}
+
+.info-head-top h1 {
+    font-size: 1.9em;
+}
+
+
 }
