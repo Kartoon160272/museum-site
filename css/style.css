@@ -16,15 +16,43 @@
     --transparent: rgba(70, 70, 70, 0.4);
 }
 
+/*GENERAL CSS*/
+
 body {
     font-family: 'Roboto', arial, helvetica, sans-serif;
     font-size: 1em;
     margin: 0 10px 10px 10px;
     line-height: 1.3;
-
 }
 
-/*LINK*/
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.wrapper {
+    margin: auto;
+    max-width: 1440px;
+    display: grid;
+    grid-gap: 20px;
+    padding-top: 90px;
+}
+
+/*LINKS*/
+
+.button {
+    background: var(--blue);
+    color: var(--light) display: block;
+    justify-self: end;
+    text-align: center;
+    padding: 1em;
+    font-size: 1.3em;
+}
+
+.button a:hover {
+    background: var(--primary);
+}
+
 
 a {
     color: var(--blue);
@@ -40,34 +68,8 @@ footer a:hover {
     color: var(--primary);
 }
 
-.button a:hover {
-    background: var(--primary);
-}
-
-.button {
-    background: var(--blue);
-    display: block;
-    justify-self: end;
-    text-align: center;
-    padding: 1em;
-    font-size: 1.3em;
-}
-
 .link_right {
     text-align: right;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.wrapper {
-    margin: auto;
-    max-width: 1440px;
-    display: grid;
-    grid-gap: 20px;
-    padding-top: 90px;
 }
 
 /* NAVIGATION */
@@ -537,7 +539,6 @@ span span {
     padding: 1rem 2rem;
 }
 
-
 .top-box-a {
     grid-area: top-box-a;
 }
@@ -631,8 +632,6 @@ span span {
     font-size: 0.9em
 }
 
-
-
 /* Boxes */
 
 .boxes {
@@ -640,7 +639,6 @@ span span {
     grid-gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
-
 
 .boxes a {
     justify-self: end;
@@ -735,7 +733,6 @@ span span {
     justify-self: start;
 }
 
-
 /* INFO */
 
 .info {
@@ -747,11 +744,30 @@ span span {
     padding: 3em;
 }
 
+.visit {
+    padding-right: 6em;
+}
+
 .info h1 {
+
+    grid-column: 1/-1;
+    grid-row: 1;
     padding: 0;
     margin: 0;
     font-size: 36px;
     color: var(--dark);
+}
+
+.info h2 {
+
+    padding: 0;
+    margin: 0;
+    font-size: 1.3em;
+    color: var(--dark);
+}
+
+.info h4 {
+    margin-top: 0;
 }
 
 .info-head-top {
@@ -775,29 +791,40 @@ span span {
     justify-self: end;
 }
 
-/*
-.info img {
-    justify-self: center;
+.info .img_txt_green {
+    font-size: 1.3em;
+    color: white;
+    background-color: var(--green);
+    grid-column: 1/-1;
+    grid-row: 1;
+    align-self: start;
+    justify-self: start;
+    padding: 8px;
+    margin: 0 0 1.5em 0;
 }
-*/
 
 /*MORE TO EXPLORE SECTION*/
 
 .more-to-explore-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
 
 }
 
 .more-to-explore {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, max-content));
+    grid-template-columns: 1fr;
     box-shadow: var(--shadow);
-    padding: 0 1em 0 0;
-    justify-items: start;
+    justify-content: start;
     align-content: start;
+    padding-right: 15px;
 }
+
+.more-to-explore h1 {
+    font-size: 1.1em;
+}
+
 
 .more-to-explore img {
     padding: 0 0 0 1em;
@@ -872,7 +899,7 @@ footer li {
     padding-top: 3em
 }
 
-/* Media Queries */
+/* MEDIA QUERIES */
 
 @media screen and (max-width: 800px) {
 
@@ -888,7 +915,9 @@ footer li {
         font-size: 2em;
         /*        align-content: end;*/
     }
-
+    .more-to-explore-container {
+        grid-template-columns: 1fr;
+    }
 
 }
 
@@ -938,7 +967,6 @@ footer li {
     }
 
 
-
     .hero-container {
         grid-template-areas: 'hero' 'top-box-a' 'top-box-b';
     }
@@ -979,6 +1007,10 @@ footer li {
         font-size: 1.9em;
     }
 
+    .visit {
+        padding-right: 0;
+    }
+
 
 }
 
@@ -1002,4 +1034,9 @@ footer li {
     .boxes {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
+
+    .visit {
+        padding-left: 0;
+    }
+
 }
